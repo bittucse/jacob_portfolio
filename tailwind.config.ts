@@ -41,7 +41,8 @@ const config = {
         blue: {
           "100": "#E4ECFF",
         },
-        purple: "#CBACF9",
+        aqua: "#2ee9e4", // Aqua color
+        // purple: "#CBACF9", // Remove or comment out the old purple
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
