@@ -203,7 +203,8 @@ const ShaderMaterial = ({
     }
     lastFrameTime = timestamp;
 
-    const material = (ref.current.material as THREE.Material & { uniforms?: any });
+    const material = (ref.current.material as THREE.Material & { uniforms?: Record<string, { value: unknown; type: string }> });
+    if (!material.uniforms) return;
     const timeLocation = material.uniforms.u_time;
     timeLocation.value = timestamp;
   });
@@ -283,7 +284,7 @@ const ShaderMaterial = ({
   }, [source, getUniforms]);
 
   return (
-    <mesh ref={ref as any}>
+    <mesh ref={ref}>
       <planeGeometry args={[2, 2]} />
       <primitive object={material} attach="material" />
     </mesh>
