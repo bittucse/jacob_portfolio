@@ -2,7 +2,6 @@ import React from 'react'
 import MagicButton from './ui/MagicButton'
 import { FaLocationArrow } from 'react-icons/fa6'
 import { socialMedia } from '@/data'
-import Link from 'next/link'
 
 const Footer = () => {
   return (

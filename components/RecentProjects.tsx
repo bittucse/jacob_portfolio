@@ -2,6 +2,7 @@ import { projects } from '@/data'
 import React from 'react'
 import { PinContainer } from './ui/3d-pin'
 import { FaLocationArrow } from 'react-icons/fa6'
+import Image from 'next/image'
 
 const RecentProjects = () => {
   return (
@@ -15,10 +16,19 @@ const RecentProjects = () => {
             <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]'>
                 <PinContainer href={link} title={link}>
                     <div className=' relative flex items-center justify-center sm:w-[570px] w-[80vw]  overflow-hidden sm:h-[40vh] h-[40vh]  mb-10'> 
-                        <div className=' relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>
-                            <img src="/bg.png" alt="bg-img" />
+                        <div className='absolute inset-0 w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>
+                          <Image src="/bg.png" alt="bg-img" fill className="object-cover" />
                         </div>
-                        <img src={img} alt={title} className=' z-10 absolute bottom-0' />
+                        <div className="z-10 relative flex items-end justify-center w-full h-full">
+                          <Image 
+                            src={img} 
+                            alt={title} 
+                            width={320}
+                            height={220}
+                            className="object-contain max-h-[70%] w-auto rounded-lg"
+                            priority
+                          />
+                        </div>
                     </div>
                     <h1 className=' font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>
                         {title}
@@ -30,10 +40,12 @@ const RecentProjects = () => {
                         <div className=' flex items-center'>
                             {iconLists.length > 0 ? (
                                 iconLists.map((icon, index) => (
-                                    <img 
+                                    <Image 
                                         key={index} 
                                         src={icon} 
                                         alt={`icon-${index}`} 
+                                        width={24}
+                                        height={24}
                                         className=' w-6 h-6 mr-2' 
                                     />
                                 ))
