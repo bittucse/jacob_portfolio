@@ -14,8 +14,8 @@ const RecentProjects = () => {
       <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
         {projects.map(({id,title,des,img,iconLists,link,techStack})=>(
             <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]'>
-                <PinContainer 
-                    href={link} 
+              <a href={link}>
+                  <PinContainer  
                     title={link} 
                     className="transition-transform duration-300 hover:scale-[1.01]"
                 >
@@ -64,7 +64,8 @@ const RecentProjects = () => {
                             <FaLocationArrow className=' ms-3' color='#CBACF9' />
                         </div>
                     </div>
-                </PinContainer> 
+                </PinContainer>
+                </a> 
             </div>
         ))}
       </div>
