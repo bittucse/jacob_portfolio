@@ -11,7 +11,7 @@ const RecentProjects = () => {
         <span className=' text-aqua'> recent projects</span>
       </h1>
       <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
-        {projects.map(({id,title,des,img,iconLists,link})=>(
+        {projects.map(({id,title,des,img,iconLists,link,techStack})=>(
             <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]'>
                 <PinContainer href={link} title={link}>
                     <div className=' relative flex items-center justify-center sm:w-[570px] w-[80vw]  overflow-hidden sm:h-[40vh] h-[40vh]  mb-10'> 
@@ -28,14 +28,20 @@ const RecentProjects = () => {
                     </p>
                     <div className=' flex items-center justify-between mt-7 mb-3'>
                         <div className=' flex items-center'>
-                            {iconLists.map((icon, index) => (
-                                <img 
-                                    key={index} 
-                                    src={icon} 
-                                    alt={`icon-${index}`} 
-                                    className=' w-6 h-6 mr-2' 
-                                />
-                            ))}
+                            {iconLists.length > 0 ? (
+                                iconLists.map((icon, index) => (
+                                    <img 
+                                        key={index} 
+                                        src={icon} 
+                                        alt={`icon-${index}`} 
+                                        className=' w-6 h-6 mr-2' 
+                                    />
+                                ))
+                            ) : (
+                                <span className='text-aqua font-semibold text-base'>
+                                    {typeof techStack === 'string' ? techStack : 'N/A'}
+                                </span>
+                            )}
                         </div>
                         <div>
                             <p className='flex lg:text-xl md:text-xs text-sm text-aqua'> Check Live Site </p>
