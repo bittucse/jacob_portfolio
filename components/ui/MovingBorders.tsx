@@ -80,7 +80,7 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => {
   // Fix pathRef typing for SVGRectElement
   const rectRef = useRef<SVGRectElement | null>(null);

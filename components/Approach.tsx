@@ -16,8 +16,7 @@ const Approach = () => {
           icon={
             <AceternityIcon
               order="Phase 1"
-              description="Understanding the problem, researching solutions, and gathering requirements"
-            />
+              />
           }
           description="Understanding the problem, researching solutions, and gathering requirements"
         >
@@ -31,7 +30,6 @@ const Approach = () => {
           icon={
             <AceternityIcon
               order="Phase 2"
-              description="Working with clients and team members to brainstorm ideas and solutions"
             />
           }
           description="Working with clients and team members to brainstorm ideas and solutions"
@@ -52,7 +50,6 @@ const Approach = () => {
           icon={
             <AceternityIcon
               order="Phase 3"
-              description="Creating the solution, writing code, and implementing features"
             />
           }
           description="Creating the solution, writing code, and implementing features"
@@ -118,7 +115,7 @@ const Card = ({
   );
 };
 
-const AceternityIcon = ({ order, description }: { order: string; description: string }) => {
+const AceternityIcon = ({ order }: { order: string }) => {
   return (
     <div>
         <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
